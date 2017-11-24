@@ -15,6 +15,12 @@ Compatibility notes
 
 - django-windows-tools 0.1.3 is the last version to work with Django <= 1.7
 - the ``win_fcgi`` part is known to work with Django versions up to 1.11 and Python 3.6 (django-windows-tools 0.2 needed), and works with IIS up to version 10
+
+#########################################################################
+turns out it only works on python3.4 for me, never works with python3.6?!
+11/24/2017
+#########################################################################
+
 - installing services with newer versions of Django and Python 3 is not tested and may not work (see also the open issues)
 - newer Celery versions cannot be installed as a service as described (see #19)
 
@@ -55,7 +61,7 @@ you need first to collect your static files with the command: ::
 
     D:\sites\mydjangoapp> python manage.py collectstatic
 
-#################################################################
+#############################################################################################################################
 If you get this error: 
     raise ImproperlyConfigured("You're using the staticfiles app "
     django.core.exceptions.ImproperlyConfigured: You're using the staticfiles app without having set the STATIC_ROOT setting to a filesystem path.
@@ -65,7 +71,9 @@ Try adding this to your settings.py:
     STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
     
 Reference: https://stackoverflow.com/questions/23215581/unable-to-perform-collectstatic
-#################################################################
+
+11/23/2017
+#############################################################################################################################
 
 
 And then run the following command with Administrator privileges : ::
